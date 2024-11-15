@@ -1,8 +1,8 @@
 
 const ContactForm = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-pink-50 p-8 rounded-lg shadow-md max-w-md w-full">
+    <div className="flex justify-center mt-24">
+      <div className=" bg-rose-50 p-8 rounded-lg shadow-md max-w-md w-full">
         <h2 className="text-center text-gray-700 text-lg font-medium mb-6">
           Fill the form and our sales representative will call you back within 24 hours
         </h2>
@@ -59,7 +59,7 @@ const ContactForm = () => {
           <div>
             <button
               type="submit"
-              className="w-full bg-red-600 text-white py-3 rounded-md hover:bg-red-700 transition-colors"
+              className="w-full bg-red-700 text-white py-3 rounded-md hover:bg-red-800 transition-colors"
             >
               Submit
             </button>

@@ -9,13 +9,19 @@ const Contact = () => {
     return (
         <>
             <Header />
-            <div className="flex">
-                <ContactUs />
-                <ContactForm />
+            <div className="flex mx-auto">
+                <div className="mx-auto">
+                    <ContactUs />
+                </div>
+
+                <div className="mr-24">
+                    <ContactForm />
+                </div>
+
             </div>
             <PartnerSection />
             <Footer />
-            
+
         </>
     )
 }

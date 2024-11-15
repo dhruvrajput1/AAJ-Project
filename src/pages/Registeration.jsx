@@ -10,16 +10,22 @@ const Registeration = () => {
 
     return (
         <>
-        <Header />
-        <div className="flex">
-            <UpperLeftLogistic />
-            <RegistrationForm />
-        </div>
+            <Header />
+            <div className="flex">
+                <div className="mx-6">
+                    <UpperLeftLogistic />
+                </div>
+                <div className="mx-12 mr-20 w-full">
+                    <RegistrationForm />
+                </div>
 
-        <MidLogisticSection />
-        <TransporterSection />
-        <ClientTestimonials />
-        <Footer />
+
+            </div>
+
+            <MidLogisticSection />
+            <TransporterSection />
+            <ClientTestimonials />
+            <Footer />
         </>
     )
 }

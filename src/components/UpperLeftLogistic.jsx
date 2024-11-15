@@ -75,7 +75,7 @@ const UpperLeftLogistic = () => {
         <p className="text-gray-600 text-lg mb-12">Trusted by top brands and small businesses alike.</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
           {/* Logos */}
-          <img src="/parteners.png" alt="Cambridge" className=" mx-96 w-52 " />
+          <img src="/parteners.png" alt="Cambridge" className="max-w-[500px] h-auto mx-auto " />
         </div>
       </div>
     </div>

@@ -1,23 +1,14 @@
 
 
-// Image imports (replace with your actual image paths or URLs)
-// import NextEducation from './images/next-education.png';
-// import Khaitan from './images/khaitan.png';
-// import TalkingSox from './images/talking-sox.png';
-// import Verde from './images/verde.png';
-// import Synergy from './images/synergy.png';
-// import FruitnRoot from './images/fruitn-root.png';
-// import Tynor from './images/tynor.png';
-
 const PartnerSection = () => {
   const partners = [
-    { name: 'Next Education' },
-    { name: 'Khaitan' },
-    { name: 'Talking Sox'},
-    { name: 'Verde' },
-    { name: 'Synergy' },
-    { name: 'Fruit n Root' },
-    { name: 'Tynor'},
+    { name: 'Next Education', logo: '/nexteducation.png' },
+    { name: 'Khaitan', logo: '/khaitan.png'  },
+    { name: 'Talking Sox', logo: '/talkingtsox.png'},
+    { name: 'Verde', logo: '/verde.png' },
+    { name: 'Synergy', logo: '/synergy.png' },
+    { name: 'Fruit n Root', logo: '/fruitnroot.png' },
+    { name: 'Tynor', logo: '/tynor.png'},
   ];
 
   return (
@@ -31,6 +22,7 @@ const PartnerSection = () => {
             <img src={partner.logo} alt={partner.name} className="h-12 object-contain" />
           </div>
         ))}
+        
       </div>
     </section>
   );

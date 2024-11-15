@@ -3,12 +3,17 @@ const Footer = () => {
     return (
         <footer className="bg-gray-100 py-10">
             <div className="container mx-auto px-6 md:px-16">
-                <div className=" flex-wrap justify-between gap-6">
+                <div className=" flex-wrap justify-between gap-6 my-6">
                     {/* Logo and Tagline */}
-                    <div className="w-full md:w-1/4">
-                        <h2 className="text-2xl font-semibold text-red-600">AAJ <span className="font-normal">swift</span></h2>
-                        <p className="text-gray-600 mt-2">Optimizing supply chains through warehousing and transportation services</p>
-                    </div>
+                        <div>
+                            <img className="w-52 " src="/aaj_swift_logo.png"></img>
+                        </div>
+                        <div className="mx-auto my-12">
+                            <p className="text-gray-600 mt-2">Optimizing supply chains through warehousing and transportation services</p>
+                        </div>
+
+
+                    <hr />
 
                     <div className='flex'>
                         {/* Company Section */}
@@ -65,6 +70,7 @@ const Footer = () => {
 
 
                 </div>
+
 
                 <div className="mt-10 flex flex-wrap justify-between items-center border-t border-gray-300 pt-6">
                     {/* Copyright and Certifications */}

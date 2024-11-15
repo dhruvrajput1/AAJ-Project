@@ -1,157 +1,159 @@
-import { useState } from 'react';
+import React, { useState } from "react";
 
 const RegistrationForm = () => {
-  const [email, setEmail] = useState('');
-  const [mobileNo, setMobileNo] = useState('');
-  const [isBusinessWithGST, setIsBusinessWithGST] = useState(false);
-  const [companyName, setCompanyName] = useState('');
-  const [companyAddress, setCompanyAddress] = useState('');
-  const [state, setState] = useState('');
-  const [pincode, setPincode] = useState('');
-  const [gstNumber, setGSTNumber] = useState('');
+  // State to handle GST toggle
+  const [needsGST, setNeedsGST] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
+  // Handler for GST buttons
+  const handleGSTToggle = (value) => {
+    setNeedsGST(value);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md">
-      <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
-          Email Id
-          
-        </label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="email"
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="mobileNo">
-          Mobile No.
-        </label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="mobileNo"
-          type="tel"
-          placeholder="Enter your mobile number"
-          value={mobileNo}
-          onChange={(e) => setMobileNo(e.target.value)}
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="isBusinessWithGST">
-          Are you a business which needs GST invoice
-        </label>
-        <div className="flex items-center">
-          <label className="inline-flex items-center">
-            <input
-              type="radio"
-              className="form-radio"
-              name="isBusinessWithGST"
-              value="yes"
-              checked={isBusinessWithGST}
-              onChange={() => setIsBusinessWithGST(true)}
-            />
-            <span className="ml-2">Yes</span>
-          </label>
-          <label className="inline-flex items-center ml-6">
-            <input
-              type="radio"
-              className="form-radio"
-              name="isBusinessWithGST"
-              value="no"
-              checked={!isBusinessWithGST}
-              onChange={() => setIsBusinessWithGST(false)}
-            />
-            <span className="ml-2">No</span>
-          </label>
-        </div>
-      </div>
-      <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="companyName">
-          Company Name
-        </label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="companyName"
-          type="text"
-          placeholder="Enter your company name"
-          value={companyName}
-          onChange={(e) => setCompanyName(e.target.value)}
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="companyAddress">
-          Company Address
-        </label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="companyAddress"
-          type="text"
-          placeholder="Enter your company address"
-          value={companyAddress}
-          onChange={(e) => setCompanyAddress(e.target.value)}
-        />
-      </div>
-      <div className="mb-4 flex">
-        <div className="w-1/2 mr-2">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="state">
-            State
+    <div className="flex justify-center items-center min-h-screen bg-gray-50 w-full">
+      <form className="bg-white p-10 rounded-lg shadow-md w-full max-w-lg">
+        <h2 className="text-2xl font-bold text-center mb-6">Register</h2>
+
+        {/* Email Input */}
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            Email Id
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="state"
-            type="text"
-            placeholder="Enter your state"
-            value={state}
-            onChange={(e) => setState(e.target.value)}
+            type="email"
+            id="email"
+            className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
           />
         </div>
-        <div className="w-1/2 ml-2">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="pincode">
-            Pincode
+
+        {/* Mobile Input */}
+        <div className="mb-4">
+          <label htmlFor="mobile" className="block text-sm font-medium text-gray-700">
+            Mobile No.
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="pincode"
-            type="text"
-            placeholder="Enter your pincode"
-            value={pincode}
-            onChange={(e) => setPincode(e.target.value)}
+            type="tel"
+            id="mobile"
+            className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
           />
         </div>
-      </div>
-      <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="gstNumber">
-          GST Number
-        </label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="gstNumber"
-          type="text"
-          placeholder="Enter your GST number"
-          value={gstNumber}
-          onChange={(e) => setGSTNumber(e.target.value)}
-        />
-      </div>
-      <div className="flex items-center justify-between">
+
+        {/* GST Toggle */}
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Are you a business which needs GST invoice?
+          </label>
+          <div className="flex space-x-4">
+            <button
+              type="button"
+              className={`px-4 py-2 rounded-md font-medium border ${
+                needsGST === true
+                  ? "bg-red-600 text-white"
+                  : "bg-white border-red-600 text-red-600"
+              }`}
+              onClick={() => handleGSTToggle(true)}
+            >
+              Yes
+            </button>
+            <button
+              type="button"
+              className={`px-4 py-2 rounded-md font-medium border ${
+                needsGST === false
+                  ? "bg-red-600 text-white"
+                  : "bg-white border-red-600 text-red-600"
+              }`}
+              onClick={() => handleGSTToggle(false)}
+            >
+              No
+            </button>
+          </div>
+        </div>
+
+        {/* GST Fields */}
+        {needsGST && (
+          <>
+            <div className="mb-4">
+              <label htmlFor="companyName" className="block text-sm font-medium text-gray-700">
+                Company Name
+              </label>
+              <input
+                type="text"
+                id="companyName"
+                className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label htmlFor="companyAddress" className="block text-sm font-medium text-gray-700">
+                Company Address
+              </label>
+              <input
+                type="text"
+                id="companyAddress"
+                className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
+              />
+            </div>
+
+            <div className="flex space-x-4 mb-4">
+              <div className="w-1/2">
+                <label htmlFor="state" className="block text-sm font-medium text-gray-700">
+                  State
+                </label>
+                <input
+                  type="text"
+                  id="state"
+                  className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
+                />
+              </div>
+              <div className="w-1/2">
+                <label htmlFor="pincode" className="block text-sm font-medium text-gray-700">
+                  Pincode
+                </label>
+                <input
+                  type="text"
+                  id="pincode"
+                  className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
+                />
+              </div>
+            </div>
+
+            <div className="mb-4">
+              <label htmlFor="gstNumber" className="block text-sm font-medium text-gray-700">
+                GST Number
+              </label>
+              <input
+                type="text"
+                id="gstNumber"
+                className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
+              />
+            </div>
+
+            <button
+              type="button"
+              className="mb-6 border border-red-500 text-red-500 px-4 py-2 rounded-md font-medium hover:bg-red-100"
+            >
+              Add New GST
+            </button>
+          </>
+        )}
+
+        {/* Register Button */}
         <button
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
+          className="w-full bg-red-600 text-white py-2 rounded-md font-medium hover:bg-red-700"
         >
           Register
         </button>
-        <a className="inline-block align-baseline font-bold text-sm text-red-500 hover:text-red-800" href="#">
-          Add New GST
-        </a>
-      </div>
-    </form>
+
+        {/* Terms & Conditions */}
+        <p className="text-sm text-gray-600 text-center mt-4">
+          By continuing you agree to the{" "}
+          <a href="#" className="text-red-600 underline">
+            Terms & Conditions
+          </a>
+        </p>
+      </form>
+    </div>
   );
 };
 
